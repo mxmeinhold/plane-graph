@@ -1,0 +1,5 @@
+{
+  "node_env": "development",
+  "port": 8080,
+  "cors_origins": []
+}

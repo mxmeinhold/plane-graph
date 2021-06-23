@@ -1,14 +1,17 @@
+import { exit } from "process";
 import * as express from "express";
 import * as cors from "cors";
 
 import * as log from "./log";
 
-declare let process: {
-  env: {
-    NODE_ENV: string;
-    PORT: number;
-  };
-};
+import get_config, { Config } from "./config";
+
+let config: Config;
+try {
+  config = get_config();
+} catch {
+  exit();
+}
 
 // Create Express app
 const app = express();
@@ -28,5 +31,5 @@ app.get("/", (_, res) => {
   res.status(200).json({ hello: "world" });
 });
 
-app.listen(process.env.PORT || 8080);
-log.info("listening", { port: process.env.PORT || 8080 });
+app.listen(config.port);
+log.info("listening", { port: config.port });
