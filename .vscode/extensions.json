@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-azuretools.vscode-docker",
+    "github.vscode-pull-request-github",
+    "ms-vscode.vscode-typescript-next",
+    "gamunu.vscode-yarn",
+    "orta.vscode-jest",
+    "mongodb.mongodb-vscode",
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint"
+  ]
+}

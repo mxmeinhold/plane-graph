@@ -1,0 +1,9 @@
+# Secrets
+config.json
+
+# Yarn
+yarn-debug.log
+
+# Build and test stuff
+dist/
+coverage/
