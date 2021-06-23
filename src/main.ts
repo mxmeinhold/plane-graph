@@ -1,6 +1,8 @@
 import * as express from "express";
 import * as cors from "cors";
 
+import * as log from "./log";
+
 declare let process: {
   env: {
     NODE_ENV: string;
@@ -27,3 +29,4 @@ app.get("/", (_, res) => {
 });
 
 app.listen(process.env.PORT || 8080);
+log.info("listening", { port: process.env.PORT || 8080 });
