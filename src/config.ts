@@ -1,9 +1,15 @@
 import { existsSync, readFileSync } from "fs";
 import * as log from "./log";
 
+type MongoConfig = {
+  /** The connection string */
+  uri: string;
+};
+
 export type Config = {
   node_env: string;
   config_path: string; // path to config file
+  mongo_config: MongoConfig;
   port: number; // Port to serve the UI on
   cors_origins: string[]; // list of permitted cors origins
 };
@@ -80,6 +86,9 @@ function pick_config_file(filepath?: string): Partial<Config> {
 export default function get_config(): Readonly<Config> {
   let config: Config = {
     node_env: "development",
+    mongo_config: {
+      uri: "",
+    },
     config_path: "",
     port: 8080,
     cors_origins: [],

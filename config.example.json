@@ -1,5 +1,6 @@
 {
   "node_env": "development",
+  "mongo_config": { "uri": "mongodb://mongo:mysecretpassword@mongo:27017" },
   "port": 8080,
   "cors_origins": []
 }
